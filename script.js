@@ -4,10 +4,11 @@ function findProjects(project) {
       .then((arr) => {
         let evaluatorComment = arr.filter((comment) => comment.user.login.includes('evaluation'))
           .reduce((acc, curr) => {
-            if (Date.parse(acc.created_at) < Date.parse(curr.created_at)) return curr;
+            let atual = parseFloat([curr.body.split('totais | ')[1].split('%')[0]])
+            if (acc < atual) return atual;
           return acc;
-        }, arr[0])
-      createCards(project.title.split('] ')[1], `${evaluatorComment.body.split('obrigatórios | ')[1].split('%')[0]}%`)
+        }, 0);
+      createCards(project.title.split('] ')[1], `${evaluatorComment}%`)
       })
 }
 
@@ -40,4 +41,4 @@ function createCards(title, note) {
   cardSection.appendChild(section);
 }
 
-window.onload = getUserPullRequests('vdiorio');
+window.onload = getUserPullRequests('Matheus-mont');
