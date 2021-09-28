@@ -79,3 +79,7 @@
 footer {
 text-align: center;
 }
+
+.columns {
+  flex-wrap: wrap;
+}
