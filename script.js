@@ -39,6 +39,5 @@ function createCards(title, note) {
   div.appendChild(i);
   cardSection.appendChild(section);
 }
-// createCards()
 
 window.onload = getUserPullRequests('vdiorio');
