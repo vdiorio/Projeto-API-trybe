@@ -6,7 +6,7 @@ function createCard(project) {
             if (Date.parse(acc.created_at) < Date.parse(curr.created_at)) return curr;
           return acc;
         }, arr[0])
-      console.log(`${project.title.split('] ')[1]} ${evaluatorComment.body.split('obrigatórios | ')[1].split('%')[0]}%`)
+      console.log(`${project.title.split('] ')[1]}: ${evaluatorComment.body.split('obrigatórios | ')[1].split('%')[0]}%`)
       })
 }
 
