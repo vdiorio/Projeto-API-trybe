@@ -20,4 +20,31 @@ function getUserPullRequests(user) {
   }));
 }
 
+function createCards() {
+  const cardSection = document.querySelector('.card-content');
+  let projectCount = ['Project 2', 'Project 3']
+
+  projectCount.forEach(() => {
+    const section = document.createElement('section');
+    section.className = 'card';
+    const div = document.createElement('div');
+    div.className = 'icon';
+    const i = document.createElement('i');
+    const h4 = document.createElement('h4');
+    for (let index of projectCount) {
+      h4.innerText = projectCount[index];
+      console.log(projectCount[index]);
+    }
+    const p = document.createElement('p');
+    p.innerText = 'Click to see this project';
+
+    cardSection.appendChild(section);
+    section.appendChild(div);
+    section.appendChild(h4);
+    section.appendChild(p);
+    div.appendChild(i);
+  })
+}
+createCards();
+
 window.onload = getUserPullRequests('vdiorio');
