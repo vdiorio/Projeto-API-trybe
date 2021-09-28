@@ -3,7 +3,6 @@
 .card {
   width: 250px;
   height: 200px;
-  color: #fff;
   margin: 1em;
   border-radius: 15px;
   display: flex;
@@ -74,6 +73,10 @@
   bottom: 10px;
   height: 60%;
   border-radius: 0 0 15px 15px;
+}
+
+.columns {
+  flex-wrap: wrap;
 }
 
 footer {
