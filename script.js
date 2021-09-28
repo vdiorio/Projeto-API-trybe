@@ -1,12 +1,12 @@
 function createCard(project) {
-  fetch(project.comments_url)
+  fetch(`${project.comments_url}?per_page=100`)
     .then((response) => response.json())
       .then((arr) => {
         let evaluatorComment = arr.filter((comment) => comment.user.login.includes('evaluation')).reduce((acc, curr) => {
             if (Date.parse(acc.created_at) < Date.parse(curr.created_at)) return curr;
           return acc;
         }, arr[0])
-      //console.log(`${project.title.split('] ')[1]} ${evaluatorComment.body.split('obrigatórios | ')[1].split('%')[0]}%`)
+      console.log(`${project.title.split('] ')[1]} ${evaluatorComment.body.split('obrigatórios | ')[1].split('%')[0]}%`)
       })
 }
 
@@ -15,7 +15,6 @@ function getUserPullRequests(user) {
   .then((response) => response.json())
   .then((object) => object.items.forEach((project) =>{
     if(project.html_url.includes('tryber')){
-      console.log(project)
       createCard(project)
     }
   }));
