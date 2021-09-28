@@ -13,16 +13,13 @@ function findProjects(project) {
 }
 
 function getUserPullRequests(user) {
-  const cardContainer = document.querySelector('.card-container')
   return fetch(`https://api.github.com/search/issues?q=state%3Aopen+author%3A${user}+type%3Apr`)
   .then((response) => response.json())
   .then((object) => object.items.forEach((project) =>{
     if(project.html_url.includes('tryber')){
-      cardContainer.innerHTML = '';
       findProjects(project)
     }
-  }))
-    .catch(() => alert('Usuário inválido'));
+  }));
 }
 
 function createCards(title, note) {
@@ -43,8 +40,6 @@ function createCards(title, note) {
   div.appendChild(i);
   cardSection.appendChild(section);
 }
+// createCards()
 
-document.querySelector('button').addEventListener('click', () => {
-  const input = document.querySelector('input');
-  getUserPullRequests(input.value);
-});
+window.onload = getUserPullRequests('Matheus-mont');
