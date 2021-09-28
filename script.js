@@ -18,7 +18,8 @@ function getUserPullRequests(user) {
     if(project.html_url.includes('tryber')){
       findProjects(project)
     }
-  }));
+  }))
+    .catch(alert('Usuário inválido'));
 }
 
 function createCards(title, note) {
@@ -41,4 +42,7 @@ function createCards(title, note) {
 }
 // createCards()
 
-window.onload = getUserPullRequests('vdiorio');
+document.querySelector('button').addEventListener('click', () => {
+  const input = document.querySelector('input');
+  getUserPullRequests(input.value);
+});
