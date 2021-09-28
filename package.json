@@ -1,0 +1,23 @@
+{
+  "name": "projeto-api-trybe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vdiorio/Projeto-API-trybe.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vdiorio/Projeto-API-trybe/issues"
+  },
+  "homepage": "https://github.com/vdiorio/Projeto-API-trybe#readme",
+  "devDependencies": {
+    "jest": "^27.2.3"
+  }
+}
