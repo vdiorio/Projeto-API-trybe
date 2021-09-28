@@ -45,6 +45,6 @@ function createCards() {
     div.appendChild(i);
   })
 }
-createCards();
+// createCards()
 
 window.onload = getUserPullRequests('vdiorio');
