@@ -6,7 +6,7 @@ async function findProjects(project) {
   await fetch(`${project.comments_url}?per_page=100`)
     .then((response) => response.json())
       .then((arr) => {
-        const title = project.title.split('] ')[1];
+        const title = project.comments_url.split('-project-')[1].split('/')[0].replaceAll('-', ' ');
         let situation;
         let evaluatorComment = arr.filter((comment) => comment.user.login.includes('evaluation'));
         let note = evaluatorComment.reduce((acc, curr) => {
@@ -45,7 +45,6 @@ function createRequisites (title, requisites) {
     .replaceAll(':heavy_check_mark:','&#9989;<br>')
     .replaceAll(':heavy_multiplication_x:','&#10060;<br>');
   viewRequisites.style.backgroundColor = 'white';
-  console.log(viewRequisites.innerHTML)
   document.getElementById(title).appendChild(viewRequisites);
 }
 
