@@ -93,10 +93,6 @@ text-align: center;
   padding:0;
 }
 
-h2,p{
-  font-size:100%;
-  font-weight:normal;
-}
 ul,li{
   list-style:none;
 }
@@ -124,13 +120,15 @@ ul li{
   float:left;
 }
 ul li h2{
-  font-size:140%;
+  font-size:120%;
   font-weight:bold;
   padding-bottom:10px;
+  text-align: center;
 }
 ul li p{
-  font-family:"Reenie Beanie",arial,sans-serif;
-  font-size:180%;
+  font-family: monospace;
+  font-size:100%;
+
 }
 ul li a{
   -webkit-transform: rotate(-6deg);

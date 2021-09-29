@@ -55,17 +55,15 @@ function createCards(title, note, situation) {
   line.id = title;
   const a = document.createElement('a');
   a.href ='#';
-  // const div = document.createElement('div');
-  // div.className = 'icon card';
-  const h4 = document.createElement('h4');
-  h4.innerText = title;
+  const h2 = document.createElement('h2');
+  h2.innerText = title;
   const p = document.createElement('p');
-  p.innerText = `Requisitos totais: ${note}% | Desempenho: ${situation}`;
+  p.innerText = `Requisitos totais: ${note}%  
+  Desempenho: ${situation}`;
 
   line.appendChild(a);
-  a.appendChild(h4);
+  a.appendChild(h2);
   a.appendChild(p);
-
   cardSection.appendChild(line);
 }
 
