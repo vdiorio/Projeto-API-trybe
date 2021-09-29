@@ -17,11 +17,11 @@ async function findProjects(project) {
             }
           return acc;
         }, 0);
-      createCards(title, note, situation, evaluatorComment.at(-1).body);
+      createCards(title, note, situation, evaluatorComment.at(-1).body, project.html_url);
       })
 }
 
-function createCards(title, note, situation, requisites) {
+function createCards(title, note, situation, requisites ,link) {
   const cardSection = document.querySelector('.sticks');
   const line = document.createElement('li');  
   line.id = title;
@@ -33,12 +33,21 @@ function createCards(title, note, situation, requisites) {
   const p = document.createElement('p');
   p.innerText = `Requisitos totais: ${note}%  
   Desempenho: ${situation}`;
-  
+  const a2 = document.createElement('a');
+  const linkButton = document.createElement('img');
+  linkButton.classList = 'buttonLink image is-48x48';
+  linkButton.src = '/images/logoGit.png';
+  a2.target = '_blank'
+  a2.href = link;
 
+  
   line.appendChild(a);
   line.onclick = () => createRequisites(title, requisites);
   a.appendChild(h2);
-  a.appendChild(p);
+  a.appendChild(p); 
+  a.appendChild(a2); 
+  a2.appendChild(linkButton);
+
   cardSection.appendChild(line);
 };
 function checkResults() { 

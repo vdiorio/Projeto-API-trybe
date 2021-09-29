@@ -175,3 +175,8 @@ text-align: center;
 .lineRequisits {
   transform: rotate(3deg); 
 }
+
+.buttonLink {  
+  margin-top: 40px;  
+  float: right;
+}
