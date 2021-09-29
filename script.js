@@ -25,10 +25,12 @@ function createCards(title, note, situation, requisites) {
   const cardSection = document.querySelector('.sticks');
   const line = document.createElement('li');  
   line.id = title;
+  line.className = 'lineProjects';
   const a = document.createElement('a');
+  a.className = 'aProjects';
   const h2 = document.createElement('h2');
   h2.innerText = title;
-  const p1 = document.createElement('p');
+  const p = document.createElement('p');
   p.innerText = `Requisitos totais: ${note}%  
   Desempenho: ${situation}`;
   
@@ -36,7 +38,7 @@ function createCards(title, note, situation, requisites) {
   line.appendChild(a);
   line.onclick = () => createRequisites(title, requisites);
   a.appendChild(h2);
-  a.appendChild(p1);
+  a.appendChild(p);
   cardSection.appendChild(line);
 };
 function checkResults() { 
@@ -53,11 +55,19 @@ function createRequisites (title, requisites) {
   }
   
   const viewRequisites = document.createElement('li');
+  viewRequisites.className = 'lineRequisits'
+  const h2 = document.createElement('h2');
+  h2.innerText = title;
+  const a = document.createElement('a');
+  a.className = 'aRequisits';
+  const p = document.createElement('p');
   viewRequisites.id = title;
-  text.forEach((linha) => viewRequisites.innerHTML += linha.replaceAll(' | :heavy_check_mark:', '')
-    .replaceAll(' | :heavy_multiplication_x:', ''))
-  viewRequisites.width = '600px';
-  viewRequisites.heigth = '600px';
+
+  text.forEach((linha) => p.innerHTML += linha.replaceAll(' | :heavy_check_mark:', '')
+    .replaceAll(' | :heavy_multiplication_x:', '')) 
+  a.appendChild(h2);
+  a.appendChild(p); 
+  viewRequisites.appendChild(a);
   requisitesContainer.appendChild(viewRequisites)
 }
 
