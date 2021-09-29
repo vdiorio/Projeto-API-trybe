@@ -1,5 +1,3 @@
-const { getUserPullRequests } = require("./script");
-
 describe('Validação positiva do usuário', () => {
   it('Ao passar um usuário inválido, um alerta deve ser gerado', () => {
     expect(2 + 2).toBe(4)
