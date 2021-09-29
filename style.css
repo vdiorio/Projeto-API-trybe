@@ -1,7 +1,6 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma-rtl.min.css";
 
-/* Utilizado como referência para a estilização dos cards https://www.instagram.com/p/CTv5E5ZBFOW/ */
 .card {
   width: 250px;
   height: 200px;
