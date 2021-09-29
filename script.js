@@ -1,4 +1,6 @@
-function findProjects(project) {
+let lastName;
+
+function  findProjects(project) {
   fetch(`${project.comments_url}?per_page=100`)
     .then((response) => response.json())
       .then((arr) => {
@@ -15,11 +17,15 @@ function findProjects(project) {
 function getUserPullRequests(user) {
   return fetch(`https://api.github.com/search/issues?q=state%3Aopen+author%3A${user}+type%3Apr`)
   .then((response) => response.json())
-  .then((object) => object.items.forEach((project) =>{
+  .then((object) => {
+    object.items.forEach((project) =>{
     if(project.html_url.includes('tryber')){
-      findProjects(project)
+      cardContainer.innerHTML = '';
+      findProjects(project);
     }
-  }));
+    lastName = user
+  })})
+    .catch(() => alert('Usuário inválido'));
 }
 
 function createCards(title, note) {
@@ -42,4 +48,8 @@ function createCards(title, note) {
 }
 // createCards()
 
-window.onload = getUserPullRequests('Matheus-mont');
+document.querySelector('button').addEventListener('click', () => {
+  const input = document.querySelector('input');
+  if (lastName === input.value ) return true;
+  getUserPullRequests(input.value);
+});
