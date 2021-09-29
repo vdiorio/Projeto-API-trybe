@@ -12,18 +12,18 @@ Aplicação criada com o intuito de buscar nos repositórios dos projetos da try
 
 ### 🎯 Objetivo
 
-Este projeto tem como objetivo facilitar a vida das pessoas estudantes da Trybe, ajudando-as a visualizar o andamento de seus projetos.
+<a name="objetivo"></a>Este projeto tem como objetivo facilitar a vida das pessoas estudantes da Trybe, ajudando-as a visualizar o andamento de seus projetos.
 <hr>
 
 ### 📑 Como usar
 
-Acesse a página da aplicação clicando <a href="https://vdiorio.github.io/Projeto-API-trybe/">aqui</a>. Para que possa localizar todos os seus projetos, você apenas precisa colocar seu username do GitHub no campo de pesquisa da página e realizar o login, que pode ser feito clicando no botão Sign In, ou apenas teclando Enter.
+<a name="comoUsar"></a>Acesse a página da aplicação clicando <a href="https://vdiorio.github.io/Projeto-API-trybe/">aqui</a>. Para que possa localizar todos os seus projetos, você apenas precisa colocar seu username do GitHub no campo de pesquisa da página e realizar o login, que pode ser feito clicando no botão Sign In, ou apenas teclando Enter.
 Será mostrado todos os projetos que você realizou na Trybe. Ao passar o mouse por cima de cada item, aparecerá o andamento do seu projeto em porcentagem. Caso você clique no item, no lado esquerdo de sua tela todos os requisitos do referido projeto aparecerão com seus respectivos status.
 <hr>
 
 ### 🛠 Tecnologias
 
-As seguintes ferramentas foram utilizadas na construção do projeto:
+<a name="tecnologias"></a>As seguintes ferramentas foram utilizadas na construção do projeto:
 
 <code>
 <a href="https://www.w3schools.com/html/"><img height="30" src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"></a>
@@ -40,7 +40,7 @@ As seguintes ferramentas foram utilizadas na construção do projeto:
 
 
 ### 👑 Autores
-
+<a name="autores"></a>
 - Álvaro Antônio de Gusmão Gularte - (https://github.com/alvarogularte)
 - Matheus Oliveira Monteiro - (https://github.com/Matheus-Mont)
 - Raphael Taglialegna da Rocha Costa - (https://github.com/RaphaelTaglialegna)
