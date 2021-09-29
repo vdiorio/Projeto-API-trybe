@@ -1,16 +1,20 @@
 let lastName;
+const input = document.querySelector('input');
+const userButton = document.querySelector('button')
 
 function  findProjects(project) {
   fetch(`${project.comments_url}?per_page=100`)
     .then((response) => response.json())
       .then((arr) => {
-        let evaluatorComment = arr.filter((comment) => comment.user.login.includes('evaluation'))
-          .reduce((acc, curr) => {
+        const title = project.title.split('] ')[1]
+        let evaluatorComment = arr.filter((comment) => comment.user.login.includes('evaluation'));
+        let note = evaluatorComment.reduce((acc, curr) => {
             let atual = parseFloat([curr.body.split('totais | ')[1].split('%')[0]])
             if (acc < atual) return atual;
           return acc;
         }, 0);
-      createCards(project.title.split('] ')[1], `${evaluatorComment}%`)
+      createCards(title, `${note}%`)
+      createRequisites(title, evaluatorComment.at(-1).body)
       })
 }
 
@@ -28,10 +32,23 @@ function getUserPullRequests(user) {
     .catch(() => alert('Usuário inválido'));
 }
 
+function createRequisites (title, requisites) {
+  const text = requisites.split('*Avaliação*')[1].split('--- | :---:')[1];
+  const viewRequisites = document.createElement('p');
+  viewRequisites.id = title;
+  viewRequisites.innerHTML = text
+    .replaceAll(':heavy_check_mark:','&#9989;<br>')
+    .replaceAll(':heavy_multiplication_x:','&#10060;<br>');
+  viewRequisites.style.backgroundColor = 'white';
+  console.log(viewRequisites.innerHTML)
+  document.getElementById(title).appendChild(viewRequisites);
+}
+
 function createCards(title, note) {
   const cardSection = document.querySelector('.card-container');
   const section = document.createElement('div');
   section.classList = 'card has-text-black column';
+  section.id = title;
   const div = document.createElement('div');
   div.className = 'icon card';
   const i = document.createElement('i');
@@ -48,8 +65,7 @@ function createCards(title, note) {
 }
 // createCards()
 
-document.querySelector('button').addEventListener('click', () => {
-  const input = document.querySelector('input');
+userButton.addEventListener('click', () => {
   if (lastName === input.value ) return true;
   getUserPullRequests(input.value);
 });
