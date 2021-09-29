@@ -36,7 +36,7 @@ function createCards(title, note, situation, requisites ,link) {
   const a2 = document.createElement('a');
   const linkButton = document.createElement('img');
   linkButton.classList = 'buttonLink image is-48x48';
-  linkButton.src = './images/logoGit.png';
+  linkButton.src = URL('./images/logoGit.png');
   a2.target = '_blank'
   a2.href = link;
 
