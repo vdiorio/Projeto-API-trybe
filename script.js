@@ -1,35 +1,35 @@
 let lastName;
 const input = document.querySelector('input');
-const userButton = document.querySelector('button')
+const userButton = document.querySelector('button');
 
-function findProjects(project) {
-  fetch(`${project.comments_url}?per_page=100`)
+async function findProjects(project) {
+  await fetch(`${project.comments_url}?per_page=100`)
     .then((response) => response.json())
       .then((arr) => {
-        const title = project.title.split('] ')[1]
+        const title = project.title.split('] ')[1];
         let evaluatorComment = arr.filter((comment) => comment.user.login.includes('evaluation'));
         let note = evaluatorComment.reduce((acc, curr) => {
-            let atual = parseFloat([curr.body.split('totais | ')[1].split('%')[0]])
+            let atual = parseFloat([curr.body.split('totais | ')[1].split('%')[0]]);
             if (acc < atual) return atual;
           return acc;
         }, 0);
-      createCards(title, `${note}%`)
-      createRequisites(title, evaluatorComment.at(-1).body)
+      createCards(title, `${note}%`);
+      createRequisites(title, evaluatorComment.at(-1).body);
       })
 }
 
 function getUserPullRequests(user) {
-  const cardContainer = document.querySelector('.card-container')
+  const cardContainer = document.querySelector('.card-container');
   return fetch(`https://api.github.com/search/issues?q=state%3Aopen+author%3A${user}+type%3Apr`)
-  .then((response) => response.json())
-  .then((object) => {
-    object.items.forEach((project) =>{
-    if(project.html_url.includes('tryber')){
-      cardContainer.innerHTML = '';
-      findProjects(project);
-    }
-    lastName = user
-  })})
+    .then((response) => response.json())
+      .then((object) => {
+        object.items.forEach((project) =>{
+        if(project.html_url.includes('tryber')){
+          cardContainer.innerHTML = '';
+          findProjects(project);
+        }
+        lastName = user
+        })})
     .catch(() => alert('Usuário inválido'));
 }
 
@@ -65,7 +65,11 @@ function createCards(title, note) {
   cardSection.appendChild(section);
 }
 
+input.addEventListener('keyup', (event) => {
+  if (event.key === "Enter") userButton.click();
+});
+
 userButton.addEventListener('click', () => {
   if (lastName === input.value ) return true;
-  getUserPullRequests(input.value);
+  getUserPullRequests(input.value)
 });
