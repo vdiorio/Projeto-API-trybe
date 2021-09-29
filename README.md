@@ -1,6 +1,6 @@
 <h1 align="center">My Projects Trybe</h1>
 
-Aplicação criada com o intuito de buscar nos repositórios dos projetos da trybe todas as Pull Requests criadas pelo usuário pesquisado.
+Aplicação criada com o intuito de buscar nos repositórios dos projetos da trybe todas as Pull Requests criadas pela pessoa usuária pesquisada.
 
 <p align="center">
  <a href="#objetivo">Objetivo</a> •
@@ -17,8 +17,8 @@ Este projeto tem como objetivo facilitar a vida das pessoas estudantes da Trybe,
 
 ### 📑 Como usar
 
-Para localizar todos os seus projetos, você apenas precisa colocar seu username do GitHub no input da página e realizar o sign in.
-Será mostrado todos os projetos que você realizou na Trybe. Ao passar o mouse por cima de cada item, aparecerá o andamento do seu projeto em porcentagem. Caso você clique no item, um card com os requisitos irá aparecer.
+Acesse a página da aplicação clicando <a href="https://vdiorio.github.io/Projeto-API-trybe/">aqui</a>. Para que possa localizar todos os seus projetos, você apenas precisa colocar seu username do GitHub no campo de pesquisa da página e realizar o login, que pode ser feito clicando no botão Sign In, ou apenas teclando Enter.
+Será mostrado todos os projetos que você realizou na Trybe. Ao passar o mouse por cima de cada item, aparecerá o andamento do seu projeto em porcentagem. Caso você clique no item, no lado esquerdo de sua tela todos os requisitos do referido projeto aparecerão com seus respectivos status.
 <hr>
 
 ### 🛠 Tecnologias
