@@ -2,7 +2,7 @@ let lastName;
 const input = document.querySelector('input');
 const userButton = document.querySelector('button')
 
-function  findProjects(project) {
+function findProjects(project) {
   fetch(`${project.comments_url}?per_page=100`)
     .then((response) => response.json())
       .then((arr) => {
@@ -19,6 +19,7 @@ function  findProjects(project) {
 }
 
 function getUserPullRequests(user) {
+  const cardContainer = document.querySelector('.card-container')
   return fetch(`https://api.github.com/search/issues?q=state%3Aopen+author%3A${user}+type%3Apr`)
   .then((response) => response.json())
   .then((object) => {
@@ -63,7 +64,6 @@ function createCards(title, note) {
   div.appendChild(i);
   cardSection.appendChild(section);
 }
-// createCards()
 
 userButton.addEventListener('click', () => {
   if (lastName === input.value ) return true;
