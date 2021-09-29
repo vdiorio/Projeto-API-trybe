@@ -69,3 +69,5 @@ userButton.addEventListener('click', () => {
   if (lastName === input.value ) return true;
   getUserPullRequests(input.value);
 });
+
+module.exports = {getUserPullRequests, createCards, createRequisites, findProjects};
