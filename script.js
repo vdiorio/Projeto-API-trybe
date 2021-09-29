@@ -62,7 +62,10 @@ function createRequisites (title, requisites) {
   a.className = 'aRequisits';
   const p = document.createElement('p');
   viewRequisites.id = title;
-
+  // Ordenar lista de requisitos 
+  // https://stackoverflow.com/questions/2802341/javascript-natural-sort-of-alphanumerical-strings
+  const collator = new Intl.Collator(undefined, {numeric: true, sensitivity: 'base'});
+  text.sort(collator.compare);
   text.forEach((linha) => p.innerHTML += linha.replaceAll(' | :heavy_check_mark:', '')
     .replaceAll(' | :heavy_multiplication_x:', '')) 
   a.appendChild(h2);
