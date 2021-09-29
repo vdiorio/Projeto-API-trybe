@@ -41,9 +41,6 @@ function createCards(title, note, situation, requisites) {
   a.appendChild(p);
   cardSection.appendChild(line);
 };
-function checkResults() { 
-
-}
 
 function createRequisites (title, requisites) {
   const requisitesContainer = document.querySelector('.sticks_results')
@@ -53,7 +50,6 @@ function createRequisites (title, requisites) {
     text[i] = text[i].includes(' | :heavy_check_mark:') 
       ? `&#9989; ${text[i]}<br>` : `&#10060; ${text[i]}<br>`
   }
-  
   const viewRequisites = document.createElement('li');
   viewRequisites.className = 'lineRequisits'
   const h2 = document.createElement('h2');
