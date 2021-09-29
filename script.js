@@ -22,6 +22,7 @@ async function findProjects(project) {
       })
 }
 
+
 function getUserPullRequests(user) {
   const cardContainer = document.querySelector('.sticks');
   return fetch(`https://api.github.com/search/issues?q=state%3Aopen+author%3A${user}+type%3Apr`)
@@ -56,14 +57,18 @@ function createCards(title, note, situation) {
   a.href ='#';
   const h2 = document.createElement('h2');
   h2.innerText = title;
-  const p = document.createElement('p');
+  const p1 = document.createElement('p');
   p.innerText = `Requisitos totais: ${note}%  
   Desempenho: ${situation}`;
+  
 
   line.appendChild(a);
   a.appendChild(h2);
-  a.appendChild(p);
+  a.appendChild(p1);
   cardSection.appendChild(line);
+};
+function checkResults() { 
+
 }
 
 input.addEventListener('keyup', (event) => {
