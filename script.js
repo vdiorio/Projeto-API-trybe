@@ -7,13 +7,17 @@ async function findProjects(project) {
     .then((response) => response.json())
       .then((arr) => {
         const title = project.title.split('] ')[1];
+        let situation;
         let evaluatorComment = arr.filter((comment) => comment.user.login.includes('evaluation'));
         let note = evaluatorComment.reduce((acc, curr) => {
             let atual = parseFloat([curr.body.split('totais | ')[1].split('%')[0]]);
-            if (acc < atual) return atual;
+            if (acc < atual) {
+              situation = curr.body.split('Desempenho | ')[1].split('C')[0]
+              return atual
+            }
           return acc;
         }, 0);
-      createCards(title, `${note}%`);
+      createCards(title, note, situation);
       createRequisites(title, evaluatorComment.at(-1).body);
       })
 }
@@ -45,7 +49,7 @@ function createRequisites (title, requisites) {
   document.getElementById(title).appendChild(viewRequisites);
 }
 
-function createCards(title, note) {
+function createCards(title, note, situation) {
   const cardSection = document.querySelector('.card-container');
   const section = document.createElement('div');
   section.classList = 'card has-text-black column';
@@ -56,7 +60,7 @@ function createCards(title, note) {
   const h4 = document.createElement('h4');
   h4.innerText = title;
   const p = document.createElement('p');
-  p.innerText = note;
+  p.innerText = `Requisitos totais: ${note}% | Desempenho: ${situation}`;
 
   section.appendChild(div);
   section.appendChild(h4);
