@@ -26,7 +26,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [CSS](https://pt-br.reactjs.org/)
 - [JavaScript](https://www.javascript.com/)
 
-### 🛠 Autores
+### Autores
 
 - Álvaro Antônio de Gusmão Gularte - (https://github.com/alvarogularte)
 - Matheus Oliveira Monteiro - (https://github.com/Matheus-Mont)
