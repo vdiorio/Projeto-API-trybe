@@ -17,7 +17,7 @@ Aplicação criada com o intuito de buscar nos repositórios dos projetos da try
 
 ### 📑 Como usar
 
-<a name="comoUsar"></a>Acesse a página da aplicação clicando <a href="https://vdiorio.github.io/Projeto-API-trybe/">aqui</a>. Para que possa localizar todos os seus projetos, você apenas precisa colocar seu username do GitHub no campo de pesquisa da página e realizar o login, que pode ser feito clicando no botão Sign In, ou apenas teclando Enter.
+<a name="comoUsar"></a>Acesse a página da aplicação clicando <a href="https://vdiorio.github.io/Projeto-API-trybe/" target="_blank">aqui</a>. Para que possa localizar todos os seus projetos, você apenas precisa colocar seu username do GitHub no campo de pesquisa da página e realizar o login, que pode ser feito clicando no botão Sign In, ou apenas teclando Enter.
 Será mostrado todos os projetos que você realizou na Trybe. Ao passar o mouse por cima de cada item, aparecerá o andamento do seu projeto em porcentagem. Caso você clique no item, no lado esquerdo de sua tela todos os requisitos do referido projeto aparecerão com seus respectivos status.
 <hr>
 
@@ -26,15 +26,15 @@ Será mostrado todos os projetos que você realizou na Trybe. Ao passar o mouse 
 <a name="tecnologias"></a>As seguintes ferramentas foram utilizadas na construção do projeto:
 
 <code>
-<a href="https://www.w3schools.com/html/"><img height="30" src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"></a>
+<a href="https://www.w3schools.com/html/" target="_blank"><img height="30" src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"></a>
 </code><br>
 
 <code>
-<a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS"><img height="30" src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"></a>
+<a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS" target="_blank"><img height="30" src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"></a>
 </code><br>
 
 <code>
-<a href="https://www.javascript.com/"><img height="30" src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E"></a>
+<a href="https://www.javascript.com/" target="_blank"><img height="30" src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E"></a>
 </code><br>
 <hr>
 
