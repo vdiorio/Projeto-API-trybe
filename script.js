@@ -50,9 +50,6 @@ function createCards(title, note, situation, requisites ,link) {
 
   cardSection.appendChild(line);
 };
-function checkResults() { 
-
-}
 
 function createRequisites (title, requisites) {
   const requisitesContainer = document.querySelector('.sticks_results')
@@ -62,7 +59,6 @@ function createRequisites (title, requisites) {
     text[i] = text[i].includes(' | :heavy_check_mark:') 
       ? `&#9989; ${text[i]}<br>` : `&#10060; ${text[i]}<br>`
   }
-  
   const viewRequisites = document.createElement('li');
   viewRequisites.className = 'lineRequisits'
   const h2 = document.createElement('h2');
@@ -106,3 +102,5 @@ userButton.addEventListener('click', () => {
   if (lastName === input.value ) return true;  
   getUserPullRequests(input.value)
 });
+
+module.exports = {getUserPullRequests, createCards, createRequisites, findProjects};
