@@ -78,6 +78,7 @@
 
 .columns {
   flex-wrap: wrap;
+  text-transform: capitalize;
 }
 
 footer {
