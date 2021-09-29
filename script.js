@@ -18,12 +18,12 @@ async function findProjects(project) {
           return acc;
         }, 0);
       createCards(title, note, situation);
-      createRequisites(title, evaluatorComment.at(-1).body);
+      //createRequisites(title, evaluatorComment.at(-1).body);
       })
 }
 
 function getUserPullRequests(user) {
-  const cardContainer = document.querySelector('.card-container');
+  const cardContainer = document.querySelector('.sticks');
   return fetch(`https://api.github.com/search/issues?q=state%3Aopen+author%3A${user}+type%3Apr`)
     .then((response) => response.json())
       .then((object) => {
@@ -50,23 +50,23 @@ function createRequisites (title, requisites) {
 }
 
 function createCards(title, note, situation) {
-  const cardSection = document.querySelector('.card-container');
-  const section = document.createElement('div');
-  section.classList = 'card has-text-black column';
-  section.id = title;
-  const div = document.createElement('div');
-  div.className = 'icon card';
-  const i = document.createElement('i');
+  const cardSection = document.querySelector('.sticks');
+  const line = document.createElement('li');  
+  line.id = title;
+  const a = document.createElement('a');
+  a.href ='#';
+  // const div = document.createElement('div');
+  // div.className = 'icon card';
   const h4 = document.createElement('h4');
   h4.innerText = title;
   const p = document.createElement('p');
   p.innerText = `Requisitos totais: ${note}% | Desempenho: ${situation}`;
 
-  section.appendChild(div);
-  section.appendChild(h4);
-  section.appendChild(p);
-  div.appendChild(i);
-  cardSection.appendChild(section);
+  line.appendChild(a);
+  a.appendChild(h4);
+  a.appendChild(p);
+
+  cardSection.appendChild(line);
 }
 
 input.addEventListener('keyup', (event) => {
@@ -74,6 +74,6 @@ input.addEventListener('keyup', (event) => {
 });
 
 userButton.addEventListener('click', () => {
-  if (lastName === input.value ) return true;
+  if (lastName === input.value ) return true;  
   getUserPullRequests(input.value)
 });
